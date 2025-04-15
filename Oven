@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiz Kids Tutoring - Educational Crypto Rewards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #4b7bec;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #3867d6;
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #eb4d4b;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #d44;
+        }
+        
+        .secondary-button {
+            display: inline-block;
+            background-color: #6c5ce7;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .secondary-button:hover {
+            background-color: #5649c0;
+        }
+        
+        .kid-crypto {
+            padding: 70px 0;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e6f7ff 100%);
+        }
+        
+        .kid-crypto h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #3867d6;
+            font-size: 2.2rem;
+        }
+        
+        .kid-crypto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .kid-crypto-info {
+            padding: 20px;
+        }
+        
+        .kid-crypto-info h3 {
+            color: #3867d6;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .benefit-list {
+            margin: 25px 0;
+        }
+        
+        .benefit-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .benefit-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        
+        .reward-system {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .reward-system h3 {
+            color: #3867d6;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .reward-steps {
+            margin: 30px 0;
+        }
+        
+        .reward-step {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background-color: #3867d6;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 15px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex-grow: 1;
+        }
+        
+        .step-content h4 {
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .nft-example {
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .nft-card {
+            background: linear-gradient(145deg, #9c88ff 0%, #8c7ae6 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            width: 280px;
+            height: 350px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .nft-card-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .nft-badge-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .nft-badge-image {
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .nft-badge-details {
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+        
+        .nft-card:before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            animation: shimmer 10s linear infinite;
+            z-index: 1;
+        }
+        
+        @keyframes shimmer {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50%, 50%);
+            }
+        }
+        
+        .faq-section {
+            padding: 50px 0;
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #3867d6;
+        }
+        
+        .faq-item {
+            margin-bottom: 25px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #3867d6;
+            font-size: 1.1rem;
+        }
+        
+        .showcase-section {
+            background-color: #f0f0f0;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .showcase-section h2 {
+            margin-bottom: 40px;
+            color: #3867d6;
+        }
+        
+        .student-achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .achievement-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .achievement-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #6c5ce7;
+        }
+        
+        .achievement-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #3867d6;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .kid-crypto-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Whiz Kids Tutoring</h1>
+            <p>Empowering children through education and Web3 literacy</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#kid-crypto">Kids Crypto</a></li>
+                <li><a href="#rewards">Achievement NFTs</a></li>
+                <li><a href="#fundraiser">Fundraiser</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="kid-crypto" class="kid-crypto">
+        <div class="container">
+            <h2>Why Children Should Understand Digital Wallets</h2>
+            
+            <div class="kid-crypto-grid">
+                <div class="kid-crypto-info">
+                    <h3>Financial Literacy for the Digital Age</h3>
+                    <p>Today's children are growing up in a world where digital currencies and blockchain technology are becoming increasingly important. Understanding these concepts early provides them with valuable skills for their future.</p>
+                    
+                    <ul class="benefit-list">
+                        <li><strong>Early Financial Education:</strong> Digital wallets introduce children to concepts like saving, spending, and the value of money in an engaging way.</li>
+                        <li><strong>Future-Ready Skills:</strong> As blockchain technology becomes more mainstream, familiarity with digital wallets prepares children for future opportunities.</li>
+                        <li><strong>Responsibility and Ownership:</strong> Managing their own digital assets teaches children about responsibility and the consequences of their decisions.</li>
+                        <li><strong>Privacy and Security Awareness:</strong> Learning about wallet security helps children understand the importance of protecting personal information online.</li>
+                        <li><strong>STEM Education Enhancement:</strong> Blockchain technology incorporates mathematics, cryptography, and computer science concepts in practical applications.</li>
+                    </ul>
+                    
+                    <p>At Whiz Kids Tutoring, we believe in preparing children not just for today's world, but for the technologies that will shape their future careers and lives.</p>
+                </div>
+                
+                <div class="reward-system">
+                    <h3>Educational Achievement NFTs</h3>
+                    <p>Our innovative platform transforms educational achievements into digital rewards that children can earn, collect, and be proud of.</p>
+                    
+                    <div class="reward-steps">
+                        <div class="reward-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Complete Educational Tasks</h4>
+                                <p>Children earn points by completing homework, participating in tutoring sessions, achieving good grades, or demonstrating other positive learning behaviors.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="reward-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Verified by Tutors and Parents</h4>
+                                <p>Achievements are verified by tutors, teachers, or parents through our secure platform, creating a transparent proof of accomplishment.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="reward-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Receive Achievement NFTs</h4>
+                                <p>Verified achievements are minted as special NFTs that are deposited into the child's educational wallet, creating a permanent record of their accomplishments.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="reward-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Unlock Real Benefits</h4>
+                                <p>Achievement NFTs can be exchanged for educational resources, privileges, or even scholarship contributions, providing tangible incentives for learning.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="nft-example">
+                        <p>Example Achievement NFT:</p>
+                        <div class="nft-card">
+                            <div class="nft-card-content">
+                                <div class="nft-badge-image">
+                                    Math Champion
+                                </div>
+                                <div class="nft-badge-title">
+                                    Algebra Master
+                                </div>
+                                <div class="nft-badge-details">
+                                    Awarded to Jamie Smith<br>
+                                    for completing all advanced<br>
+                                    algebra challenges with 100% accuracy<br>
+                                    <br>
+                                    <small>Token ID: #2453 • March 15, 2025</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#contact" class="cta-button">Enroll Your Child</a>
+                <a href="#faq" class="secondary-button" style="margin-left: 15px;">Learn More</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is it safe for children to have their own crypto wallets?</div>
+                <div class="faq-answer">
+                    Yes, when properly implemented. Our educational wallets are designed specifically for children with enhanced security features, parental controls, and strict limits. The wallets are managed through a custodial system where parents maintain ultimate oversight while children learn about digital asset management in a safe environment.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do the educational NFTs differ from regular cryptocurrency?</div>
+                <div class="faq-answer">
+                    Our educational NFTs are not speculative assets. They represent verified academic achievements and have predefined educational value. They can't be sold on open markets and are designed exclusively as educational tools to incentivize learning while teaching blockchain concepts.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What can children do with their achievement NFTs?</div>
+                <div class="faq-answer">
+                    Children can collect their NFTs as proof of their accomplishments, display them in their digital portfolios, and exchange them for rewards within our educational ecosystem. These rewards include educational resources, special learning opportunities, and contributions toward educational savings.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How does the verification process work?</div>
+                <div class="faq-answer">
+                    Achievements are verified through a multi-step process. Teachers or tutors submit completed milestones, parents confirm them, and our system records these verifications on the blockchain. This creates a transparent, tamper-proof record of the child's educational journey.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">At what age can children start participating?</div>
+                <div class="faq-answer">
+                    Our program is designed for children ages 8 and up. However, the level of independence and complexity scales with age. Younger children have more parental oversight and simpler challenges, while teenagers can engage with more complex aspects of the platform.
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="showcase" class="showcase-section">
+        <div class="container">
+            <h2>Showcase of Student Achievements</h2>
+            
+            <div class="student-achievements">
+                <div class="achievement-card">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-title">Reading Champion</div>
+                    <p>Sarah completed 50 books this year, earning our highest reading achievement NFT and unlocking access to exclusive author workshops.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">🔬</div>
+                    <div class="achievement-title">Science Explorer</div>
+                    <p>Miguel completed all science projects with excellence, earning enough achievement tokens to fund his summer science camp attendance.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">🧮</div>
+                    <div class="achievement-title">Math Prodigy</div>
+                    <p>Aisha mastered advanced math concepts, earning special NFTs that contributed to her educational savings account.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
